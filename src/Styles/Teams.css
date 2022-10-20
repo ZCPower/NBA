@@ -1,0 +1,4 @@
+#teamsContainer {
+    /* border: red 5px solid; */
+    width: calc(100vw - 75px)
+}
