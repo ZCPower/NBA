@@ -1,4 +1,33 @@
 #teamsContainer {
     /* border: red 5px solid; */
-    width: calc(100vw - 75px)
+    width: calc(100vw - 75px);
+    margin-left: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.teamCard {
+    width: 100px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: .5em; */
+    /* border: 1px solid red; */
+    /* flex-basis: 125px; */
+    margin: 1em;
+    justify-content: space-evenly;
+}
+
+.teamCard h2 {
+    font-size: 18px;
+
+}
+
+.teamCard img {
+    max-width: 80%;
+    max-height: 100px;
+
 }

@@ -1,14 +1,12 @@
 const { RAPID_API_KEY } = process.env;
 const baseURL = 'https://api-nba-v1.p.rapidapi.com'
 
-const makeHeaders = (token) => {
+const makeHeaders = () => {
     let headers = {
-        "Content-Type": "application/json",
+        'X-RapidAPI-Key': '38daec2d52mshcf0436b550bd077p17b424jsn507c96880769',
+        'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
     };
 
-    if (token) {
-        headers["Authorization"] = "Bearer " + token;
-    }
     return headers;
 };
 
@@ -20,7 +18,7 @@ export async function getSeasons() {
         const response = await fetch(url, {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': RAPID_API_KEY,
+                'X-RapidAPI-Key': '38daec2d52mshcf0436b550bd077p17b424jsn507c96880769',
                 'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
             }
         })
@@ -37,11 +35,33 @@ export async function getTeams() {
     try {
         const response = await fetch(url, {
             method: 'GET',
+            params: { league: 'Standard' },
             headers: {
-
+                'X-RapidAPI-Key': '38daec2d52mshcf0436b550bd077p17b424jsn507c96880769',
+                'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
             }
         })
+        const data = await response.json();
+        return data
     } catch (error) {
+        console.error(error)
+    }
+}
 
+export async function getTeamById(id) {
+    const url = `${baseURL}/teams/?id=${id}`
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            params: { id: id },
+            headers: {
+                'X-RapidAPI-Key': '38daec2d52mshcf0436b550bd077p17b424jsn507c96880769',
+                'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+            }
+        })
+        const data = await response.json();
+        return data
+    } catch (error) {
+        console.error(error)
     }
 }

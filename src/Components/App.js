@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import '../Styles/App.css';
 import Teams from './Teams';
 import Nav from './Nav';
+import SingleTeam from './SingleTeam';
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route path='/teams'>
+          <Route exact path='/teams'>
             <Teams />
+          </Route>
+          <Route path='/teams/:teamId'>
+            <SingleTeam />
           </Route>
         </Switch>
       </Router>
