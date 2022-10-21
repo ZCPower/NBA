@@ -15,6 +15,7 @@ nav {
 #logo {
     padding: 1em 0 0 0;
     width: 75px;
+    border-bottom: 1px solid #888;
 }
 
 #logo img {
@@ -32,13 +33,14 @@ nav {
 }
 
 h1 {
-    color: rgb(255, 255, 255);
-    font-size: 22px;
+    color: #fff;
+    font-size: 26px;
     position: relative;
     bottom: 22px;
     font-family: 'Anton', sans-serif;
     font-style: italic;
-
+    text-shadow: .5px 0 #000, -.5px 0 #000, 0 2px #000, 0 -2px #000,
+        .5px 1px #000, -.5px -1px #000, .5px -1px #000, -.5px 1px #000;
 }
 
 #navLinks li {
@@ -50,6 +52,7 @@ h1 {
     align-items: center;
     justify-content: center;
     font-family: 'Exo 2', sans-serif;
+    border-bottom: #888 1px solid;
 }
 
 nav li {
@@ -73,4 +76,16 @@ nav a {
     text-decoration: none;
     text-align: center;
     font-size: 16px;
+}
+
+#navLinks li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navLinks li a img {
+    margin: .25em;
+    width: 30px;
+    max-height: 50px;
 }

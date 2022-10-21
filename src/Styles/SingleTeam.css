@@ -2,3 +2,46 @@
     border: 1px solid yellow;
     width: 100%;
 }
+
+.teamPageLogo {
+    max-height: 150px;
+    margin: 10px;
+}
+
+.teamPageHeader {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10vw;
+    align-items: center;
+}
+
+.teamPageHeader select {
+    width: 75px;
+}
+
+#teamNav {
+    /* border: 1px solid red; */
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#teamNav ul {
+    height: 100%;
+}
+
+#teamNav ul button {
+    margin: 0 15px;
+    width: 150px;
+    height: 100%;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#teamNav ul button:hover {
+    background-color: #333
+}
