@@ -1,6 +1,7 @@
 #singleTeam {
     border: 1px solid yellow;
     width: 100%;
+    overflow-y: none;
 }
 
 .teamPageLogo {
@@ -23,9 +24,11 @@
     /* border: 1px solid red; */
     height: 45px;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     background-color: black;
+    position: fixed;
 }
 
 #teamNav ul {

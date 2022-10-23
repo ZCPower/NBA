@@ -9,7 +9,8 @@ function SingleTeam() {
     const { teamId } = useParams();
     const [singleTeam, setSingleTeam] = useState([]);
     const [seasons, setSeasons] = useState([]);
-    const [view, setView] = useState('roster')
+    const [singleSeason, setSingleSeason] = useState(2022);
+    const [view, setView] = useState(null)
 
     console.log('in the componenet', teamId)
     useEffect(() => {
@@ -48,6 +49,12 @@ function SingleTeam() {
 
     function viewStats() {
         setView('stats')
+    }
+
+    function handleSelect(e) {
+        e.preventDefault();
+        setSingleSeason(e.target.value);
+        console.log(singleSeason)
     }
 
     let mappedSeasons = seasons.map((x) => {

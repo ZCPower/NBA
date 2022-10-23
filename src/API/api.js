@@ -68,17 +68,16 @@ export async function getTeamById(id) {
 
 
 //add seasons as a parameter
-export async function getRosterByTeam(teamId) {
-    const url = `${baseURL}/players`;
+export async function getRosterByTeam(teamId, season) {
+    console.log(season)
+    const url = `${baseURL}/players/?team=${teamId}&season=${season}`;
     try {
         const response = await fetch(url, {
             method: 'GET',
-            params: { team: teamId, season: 2021 },
             headers: {
                 'X-RapidAPI-Key': '38daec2d52mshcf0436b550bd077p17b424jsn507c96880769',
                 'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
             }
-
         })
         const data = response.json();
         console.log(data, 'in the api')
